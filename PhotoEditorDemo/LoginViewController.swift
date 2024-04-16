@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
                     }
                 } else {
                     user.sendEmailVerification { error in
-                        // ...
+                        // TODO: verify e-mail screen
                     }
                 }
             } else {

@@ -8,8 +8,6 @@ target 'PhotoEditorDemo' do
   # Pods for PhotoEditorDemo
 	pod 'FirebaseAnalytics'
 	pod 'FirebaseAuth'
-	pod 'FirebaseUI/Auth'
-	pod 'FirebaseUI/Email'
-	pod 'FirebaseUI/Google'
+	pod 'GoogleSignIn'
 
 end

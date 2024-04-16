@@ -17,6 +17,7 @@
 		5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B752BCEB12B00959613 /* StartViewController.swift */; };
 		5F109B782BCEB1D900959613 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B772BCEB1D900959613 /* LoginViewController.swift */; };
 		5F109B7A2BCEB1EA00959613 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B792BCEB1EA00959613 /* SignUpViewController.swift */; };
+		5F109B7C2BCED81F00959613 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */; };
 		5F8A081D2BCD36AA0079987A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A081C2BCD36AA0079987A /* AppDelegate.swift */; };
 		5F8A081F2BCD36AA0079987A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */; };
 		5F8A08212BCD36AA0079987A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A08202BCD36AA0079987A /* MainViewController.swift */; };
@@ -38,6 +39,7 @@
 		5F109B752BCEB12B00959613 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		5F109B772BCEB1D900959613 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5F109B792BCEB1EA00959613 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
 		5F8A08192BCD36AA0079987A /* PhotoEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8A081C2BCD36AA0079987A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				5F109B752BCEB12B00959613 /* StartViewController.swift */,
 				5F109B772BCEB1D900959613 /* LoginViewController.swift */,
 				5F109B792BCEB1EA00959613 /* SignUpViewController.swift */,
+				5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */,
 				5F8A08222BCD36AA0079987A /* Main.storyboard */,
 				5F8A08252BCD36AC0079987A /* Assets.xcassets */,
 				5F8A08272BCD36AC0079987A /* LaunchScreen.storyboard */,
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F109B7C2BCED81F00959613 /* RestorePasswordViewController.swift in Sources */,
 				5F109B682BCD6B5400959613 /* FilterToolView.swift in Sources */,
 				5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */,
 				5F8A08212BCD36AA0079987A /* MainViewController.swift in Sources */,
