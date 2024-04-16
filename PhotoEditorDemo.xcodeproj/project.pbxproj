@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F109B642BCD59E600959613 /* RotateToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B632BCD59E600959613 /* RotateToolView.swift */; };
+		5F109B662BCD59F600959613 /* RotateToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B652BCD59F600959613 /* RotateToolView.xib */; };
+		5F109B682BCD6B5400959613 /* FilterToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B672BCD6B5400959613 /* FilterToolView.swift */; };
+		5F109B6A2BCD6B6400959613 /* FilterToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B692BCD6B6400959613 /* FilterToolView.xib */; };
+		5F109B6C2BCD72B500959613 /* TextToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B6B2BCD72B500959613 /* TextToolView.swift */; };
+		5F109B6E2BCD72CC00959613 /* TextToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B6D2BCD72CC00959613 /* TextToolView.xib */; };
+		5F109B702BCEA05D00959613 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B6F2BCEA05D00959613 /* GoogleService-Info.plist */; };
+		5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B752BCEB12B00959613 /* StartViewController.swift */; };
+		5F109B782BCEB1D900959613 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B772BCEB1D900959613 /* LoginViewController.swift */; };
+		5F109B7A2BCEB1EA00959613 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B792BCEB1EA00959613 /* SignUpViewController.swift */; };
 		5F8A081D2BCD36AA0079987A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A081C2BCD36AA0079987A /* AppDelegate.swift */; };
 		5F8A081F2BCD36AA0079987A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */; };
-		5F8A08212BCD36AA0079987A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A08202BCD36AA0079987A /* ViewController.swift */; };
+		5F8A08212BCD36AA0079987A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A08202BCD36AA0079987A /* MainViewController.swift */; };
 		5F8A08242BCD36AA0079987A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8A08222BCD36AA0079987A /* Main.storyboard */; };
 		5F8A08262BCD36AC0079987A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8A08252BCD36AC0079987A /* Assets.xcassets */; };
 		5F8A08292BCD36AC0079987A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8A08272BCD36AC0079987A /* LaunchScreen.storyboard */; };
+		E0D1276BFAB60B3CC49DE77D /* Pods_PhotoEditorDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4F284A10B325E11B730810 /* Pods_PhotoEditorDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E4F284A10B325E11B730810 /* Pods_PhotoEditorDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoEditorDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F109B632BCD59E600959613 /* RotateToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateToolView.swift; sourceTree = "<group>"; };
+		5F109B652BCD59F600959613 /* RotateToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotateToolView.xib; sourceTree = "<group>"; };
+		5F109B672BCD6B5400959613 /* FilterToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToolView.swift; sourceTree = "<group>"; };
+		5F109B692BCD6B6400959613 /* FilterToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterToolView.xib; sourceTree = "<group>"; };
+		5F109B6B2BCD72B500959613 /* TextToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToolView.swift; sourceTree = "<group>"; };
+		5F109B6D2BCD72CC00959613 /* TextToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextToolView.xib; sourceTree = "<group>"; };
+		5F109B6F2BCEA05D00959613 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F109B752BCEB12B00959613 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		5F109B772BCEB1D900959613 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5F109B792BCEB1EA00959613 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5F8A08192BCD36AA0079987A /* PhotoEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8A081C2BCD36AA0079987A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F8A08202BCD36AA0079987A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F8A08202BCD36AA0079987A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5F8A08232BCD36AA0079987A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F8A08252BCD36AC0079987A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8A08282BCD36AC0079987A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F8A082A2BCD36AC0079987A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F22A1C13C517E44FDF57DD0 /* Pods-PhotoEditorDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEditorDemo.release.xcconfig"; path = "Target Support Files/Pods-PhotoEditorDemo/Pods-PhotoEditorDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E1701DAC22BC15F3778F32E7 /* Pods-PhotoEditorDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEditorDemo.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEditorDemo/Pods-PhotoEditorDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D1276BFAB60B3CC49DE77D /* Pods_PhotoEditorDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA7874A6A4AC54ACA8B1037 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1701DAC22BC15F3778F32E7 /* Pods-PhotoEditorDemo.debug.xcconfig */,
+				8F22A1C13C517E44FDF57DD0 /* Pods-PhotoEditorDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		234E0B9504F4C622B618E59F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E4F284A10B325E11B730810 /* Pods_PhotoEditorDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F109B602BCD599A00959613 /* Toolviews */ = {
+			isa = PBXGroup;
+			children = (
+				5F109B632BCD59E600959613 /* RotateToolView.swift */,
+				5F109B652BCD59F600959613 /* RotateToolView.xib */,
+				5F109B672BCD6B5400959613 /* FilterToolView.swift */,
+				5F109B692BCD6B6400959613 /* FilterToolView.xib */,
+				5F109B6B2BCD72B500959613 /* TextToolView.swift */,
+				5F109B6D2BCD72CC00959613 /* TextToolView.xib */,
+			);
+			path = Toolviews;
+			sourceTree = "<group>";
+		};
 		5F8A08102BCD36AA0079987A = {
 			isa = PBXGroup;
 			children = (
 				5F8A081B2BCD36AA0079987A /* PhotoEditorDemo */,
 				5F8A081A2BCD36AA0079987A /* Products */,
+				1AA7874A6A4AC54ACA8B1037 /* Pods */,
+				234E0B9504F4C622B618E59F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +113,18 @@
 		5F8A081B2BCD36AA0079987A /* PhotoEditorDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5F109B602BCD599A00959613 /* Toolviews */,
 				5F8A081C2BCD36AA0079987A /* AppDelegate.swift */,
 				5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */,
-				5F8A08202BCD36AA0079987A /* ViewController.swift */,
+				5F8A08202BCD36AA0079987A /* MainViewController.swift */,
+				5F109B752BCEB12B00959613 /* StartViewController.swift */,
+				5F109B772BCEB1D900959613 /* LoginViewController.swift */,
+				5F109B792BCEB1EA00959613 /* SignUpViewController.swift */,
 				5F8A08222BCD36AA0079987A /* Main.storyboard */,
 				5F8A08252BCD36AC0079987A /* Assets.xcassets */,
 				5F8A08272BCD36AC0079987A /* LaunchScreen.storyboard */,
 				5F8A082A2BCD36AC0079987A /* Info.plist */,
+				5F109B6F2BCEA05D00959613 /* GoogleService-Info.plist */,
 			);
 			path = PhotoEditorDemo;
 			sourceTree = "<group>";
@@ -74,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F8A082D2BCD36AC0079987A /* Build configuration list for PBXNativeTarget "PhotoEditorDemo" */;
 			buildPhases = (
+				68333797142BF4AA8F85516A /* [CP] Check Pods Manifest.lock */,
 				5F8A08152BCD36AA0079987A /* Sources */,
 				5F8A08162BCD36AA0079987A /* Frameworks */,
 				5F8A08172BCD36AA0079987A /* Resources */,
+				AFFE1E59CCD0F6187AA89651 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,20 +191,72 @@
 			files = (
 				5F8A08292BCD36AC0079987A /* LaunchScreen.storyboard in Resources */,
 				5F8A08262BCD36AC0079987A /* Assets.xcassets in Resources */,
+				5F109B6A2BCD6B6400959613 /* FilterToolView.xib in Resources */,
+				5F109B6E2BCD72CC00959613 /* TextToolView.xib in Resources */,
 				5F8A08242BCD36AA0079987A /* Main.storyboard in Resources */,
+				5F109B702BCEA05D00959613 /* GoogleService-Info.plist in Resources */,
+				5F109B662BCD59F600959613 /* RotateToolView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68333797142BF4AA8F85516A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoEditorDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFFE1E59CCD0F6187AA89651 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEditorDemo/Pods-PhotoEditorDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEditorDemo/Pods-PhotoEditorDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoEditorDemo/Pods-PhotoEditorDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F8A08152BCD36AA0079987A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8A08212BCD36AA0079987A /* ViewController.swift in Sources */,
+				5F109B682BCD6B5400959613 /* FilterToolView.swift in Sources */,
+				5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */,
+				5F8A08212BCD36AA0079987A /* MainViewController.swift in Sources */,
 				5F8A081D2BCD36AA0079987A /* AppDelegate.swift in Sources */,
+				5F109B782BCEB1D900959613 /* LoginViewController.swift in Sources */,
 				5F8A081F2BCD36AA0079987A /* SceneDelegate.swift in Sources */,
+				5F109B7A2BCEB1EA00959613 /* SignUpViewController.swift in Sources */,
+				5F109B642BCD59E600959613 /* RotateToolView.swift in Sources */,
+				5F109B6C2BCD72B500959613 /* TextToolView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,14 +403,17 @@
 		};
 		5F8A082E2BCD36AC0079987A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1701DAC22BC15F3778F32E7 /* Pods-PhotoEditorDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PGXR3ZUCW4;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoEditorDemo/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to take photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -305,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-.PhotoEditorDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Khomyakov.PhotoEditorDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,14 +434,17 @@
 		};
 		5F8A082F2BCD36AC0079987A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F22A1C13C517E44FDF57DD0 /* Pods-PhotoEditorDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PGXR3ZUCW4;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoEditorDemo/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to take photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-.PhotoEditorDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Khomyakov.PhotoEditorDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
