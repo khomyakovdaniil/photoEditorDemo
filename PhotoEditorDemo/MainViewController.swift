@@ -7,6 +7,7 @@
 
 import UIKit
 import PencilKit
+import YandexMobileAds
 
 class MainViewController: UIViewController {
     
@@ -27,6 +28,15 @@ class MainViewController: UIViewController {
     
     let canvasView = PKCanvasView()
     let imagePicker = UIImagePickerController()
+    
+    private lazy var adView: AdView = {
+        let adSize = BannerAdSize.inlineSize(withWidth: 320, maxHeight: 100)
+
+        let adView = AdView(adUnitID: "demo-banner-yandex", adSize: adSize)
+        adView.delegate = self
+        adView.translatesAutoresizingMaskIntoConstraints = false
+        return adView
+    }()
     
     // MARK: - Outlets
     
@@ -61,6 +71,7 @@ class MainViewController: UIViewController {
         canvasView.drawingPolicy = .anyInput
         canvasView.isUserInteractionEnabled = false
         baseView.addSubview(canvasView)
+        adView.loadAd()
     }
     
     // MARK: - Private Functions (basic)
@@ -280,5 +291,21 @@ extension MainViewController: PKCanvasViewDelegate {
             toolPicker.addObserver(canvasView)
             canvasView.becomeFirstResponder()
         }
+    }
+}
+
+    // MARK: - Demo ad
+
+extension MainViewController: AdViewDelegate {
+    func adViewDidLoad(_ adView: AdView) {
+        view.addSubview(adView)
+        NSLayoutConstraint.activate([
+            adView.bottomAnchor.constraint(equalTo: statePickerSegmentedControl.topAnchor, constant: -24),
+            adView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+
+    func adViewDidFailLoading(_ adView: AdView, error: Error) {
+        // This method will call after getting any error while loading the ad
     }
 }

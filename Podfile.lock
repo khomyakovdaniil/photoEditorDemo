@@ -5,6 +5,20 @@ PODS:
   - AppAuth/Core (1.7.4)
   - AppAuth/ExternalUserAgent (1.7.4):
     - AppAuth/Core
+  - DivKit (28.13.0):
+    - DivKit_LayoutKit (= 28.13.0)
+    - DivKit_Serialization (= 28.13.0)
+    - VGSLCommonCore (~> 2.4)
+    - VGSLNetworking (~> 2.4)
+  - DivKit_LayoutKit (28.13.0):
+    - DivKit_LayoutKitInterface (= 28.13.0)
+    - VGSLCommonCore (~> 2.4)
+  - DivKit_LayoutKitInterface (28.13.0):
+    - VGSLBase (~> 2.4)
+    - VGSLBaseTiny (~> 2.4)
+    - VGSLBaseUI (~> 2.4)
+  - DivKit_Serialization (28.13.0):
+    - VGSLCommonCore (~> 2.4)
   - FirebaseAnalytics (10.21.0):
     - FirebaseAnalytics/AdIdSupport (= 10.21.0)
     - FirebaseCore (~> 10.0)
@@ -105,15 +119,46 @@ PODS:
   - nanopb/encode (2.30909.1)
   - PromisesObjC (2.4.0)
   - RecaptchaInterop (100.0.0)
+  - VGSL_Fundamentals (2.4.1):
+    - VGSL_Fundamentals_Tiny (= 2.4.1)
+  - VGSL_Fundamentals_Tiny (2.4.1)
+  - VGSLBase (2.4.1):
+    - VGSL_Fundamentals (= 2.4.1)
+    - VGSLBaseTiny (= 2.4.1)
+    - VGSLBaseUI (= 2.4.1)
+  - VGSLBaseTiny (2.4.1):
+    - VGSL_Fundamentals_Tiny (= 2.4.1)
+  - VGSLBaseUI (2.4.1):
+    - VGSLBaseTiny (= 2.4.1)
+  - VGSLCommonCore (2.4.1):
+    - VGSLBase (= 2.4.1)
+  - VGSLNetworking (2.4.1):
+    - VGSLBase (= 2.4.1)
+  - YandexMobileAds (7.0.0):
+    - DivKit (= 28.13.0)
+    - YandexMobileMetrica (< 5.0.0, >= 4.0.0)
+  - YandexMobileMetrica (4.5.2):
+    - YandexMobileMetrica/Static (= 4.5.2)
+  - YandexMobileMetrica/Static (4.5.2):
+    - YandexMobileMetrica/Static/Core (= 4.5.2)
+    - YandexMobileMetrica/Static/Crashes (= 4.5.2)
+  - YandexMobileMetrica/Static/Core (4.5.2)
+  - YandexMobileMetrica/Static/Crashes (4.5.2):
+    - YandexMobileMetrica/Static/Core
 
 DEPENDENCIES:
   - FirebaseAnalytics
   - FirebaseAuth
   - GoogleSignIn
+  - YandexMobileAds (= 7.0.0)
 
 SPEC REPOS:
   trunk:
     - AppAuth
+    - DivKit
+    - DivKit_LayoutKit
+    - DivKit_LayoutKitInterface
+    - DivKit_Serialization
     - FirebaseAnalytics
     - FirebaseAppCheckInterop
     - FirebaseAuth
@@ -128,9 +173,22 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
+    - VGSL_Fundamentals
+    - VGSL_Fundamentals_Tiny
+    - VGSLBase
+    - VGSLBaseTiny
+    - VGSLBaseUI
+    - VGSLCommonCore
+    - VGSLNetworking
+    - YandexMobileAds
+    - YandexMobileMetrica
 
 SPEC CHECKSUMS:
   AppAuth: 182c5b88630569df5acb672720534756c29b3358
+  DivKit: 65af423ea03c32b6ecaa63a64d4a2ea26c217f3b
+  DivKit_LayoutKit: 3f88fab9edefb4938b9ccb5359ecbce4e1eeba69
+  DivKit_LayoutKitInterface: 90449756ba956a7fbf3b168c01f7a0b7fc6a9de0
+  DivKit_Serialization: 1b536e30c49163548bb62120320097c8ab41936d
   FirebaseAnalytics: d275f288881d4417f780115dd52c05fa9752d530
   FirebaseAppCheckInterop: fecc08c89936c8acb1428d8088313aabedb348e4
   FirebaseAuth: 711d01cccefaf10035b3090a92956d0dd4f99088
@@ -145,7 +203,16 @@ SPEC CHECKSUMS:
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  VGSL_Fundamentals: 4a965a687c76a5a435d7aaeb6b7182e82408bf4c
+  VGSL_Fundamentals_Tiny: feab274b20c5838fbe09b887db0f6cfa28e26a1c
+  VGSLBase: 37b95dd4ea137f73e8f9a8bd8ec474d8b4d75a68
+  VGSLBaseTiny: 0a0a4992a348184e8580cf73efa8eb373d750f6b
+  VGSLBaseUI: 62f147155e7b7049a32a30ac87b5bd8b83e636c5
+  VGSLCommonCore: dd33088af6633d1c09f0c9bb8027920b99e2e0c8
+  VGSLNetworking: e12d616b447522bf524c689d28f55cfbb20473cd
+  YandexMobileAds: f5467c294906de4a15e6337e6f0ae7789ecb3e41
+  YandexMobileMetrica: f5368ee93f286c793d73b58da00929babfc897c1
 
-PODFILE CHECKSUM: 72540e214ad58da6b58801610a4232e59bfbc9eb
+PODFILE CHECKSUM: 17c8ccf9750a79fbbac9793a494aadf3258aaa03
 
 COCOAPODS: 1.15.2

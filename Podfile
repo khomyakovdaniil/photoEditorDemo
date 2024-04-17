@@ -9,5 +9,6 @@ target 'PhotoEditorDemo' do
 	pod 'FirebaseAnalytics'
 	pod 'FirebaseAuth'
 	pod 'GoogleSignIn'
+	pod 'YandexMobileAds', '7.0.0'
 
 end
