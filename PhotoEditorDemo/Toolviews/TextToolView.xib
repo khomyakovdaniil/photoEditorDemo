@@ -14,25 +14,43 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yoq-pa-cnZ">
-                    <rect key="frame" x="16" y="8" width="268" height="10"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="didEnterText:" destination="iN0-l3-epB" eventType="editingDidEnd" id="F8u-j2-UMW"/>
-                    </connections>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiT-HL-sAA">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nde-rS-5wu">
+                    <rect key="frame" x="228" y="0.0" width="72" height="60"/>
+                </pickerView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-L4-MyW">
+                    <rect key="frame" x="162" y="12" width="54" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uHf-L4-MyW" secondAttribute="height" multiplier="3:2" id="fdd-uc-9a7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Yoq-pa-cnZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="9WO-Ek-3av"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Yoq-pa-cnZ" secondAttribute="trailing" constant="16" id="KCv-bL-Pz6"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Yoq-pa-cnZ" secondAttribute="bottom" constant="8" id="PF9-x8-w5a"/>
-                <constraint firstItem="Yoq-pa-cnZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="VXo-BU-u6O"/>
+                <constraint firstItem="uHf-L4-MyW" firstAttribute="leading" secondItem="aiT-HL-sAA" secondAttribute="trailing" constant="12" id="49c-bv-BQG"/>
+                <constraint firstAttribute="centerX" secondItem="aiT-HL-sAA" secondAttribute="trailing" id="4UW-a4-X1u"/>
+                <constraint firstItem="aiT-HL-sAA" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Ajf-8f-zCO"/>
+                <constraint firstAttribute="trailing" secondItem="nde-rS-5wu" secondAttribute="trailing" id="BIP-qo-5iG"/>
+                <constraint firstItem="aiT-HL-sAA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EDj-di-3TY"/>
+                <constraint firstItem="aiT-HL-sAA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ywq-bd-K7g"/>
+                <constraint firstAttribute="bottom" secondItem="uHf-L4-MyW" secondAttribute="bottom" constant="12" id="bW5-tf-Q8T"/>
+                <constraint firstItem="nde-rS-5wu" firstAttribute="leading" secondItem="uHf-L4-MyW" secondAttribute="trailing" constant="12" id="e7A-Z2-haE"/>
+                <constraint firstItem="uHf-L4-MyW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="goj-Pk-MNC"/>
+                <constraint firstItem="nde-rS-5wu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nu3-5e-NZf"/>
+                <constraint firstAttribute="bottom" secondItem="nde-rS-5wu" secondAttribute="bottom" id="tPy-DG-10u"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="116.03053435114504" y="41.549295774647888"/>
+            <connections>
+                <outlet property="colorPicker" destination="nde-rS-5wu" id="zgP-g8-86Q"/>
+                <outlet property="fontPicker" destination="aiT-HL-sAA" id="uip-kB-xRC"/>
+                <outlet property="fontSizeField" destination="uHf-L4-MyW" id="Qi9-we-sWz"/>
+            </connections>
+            <point key="canvasLocation" x="65.648854961832058" y="41.549295774647888"/>
         </view>
     </objects>
     <resources>

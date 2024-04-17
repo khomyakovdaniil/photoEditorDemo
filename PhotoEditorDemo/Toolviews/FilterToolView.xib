@@ -14,26 +14,72 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tVc-4p-jfz">
-                    <rect key="frame" x="69.666666666666686" y="14.666666666666664" width="161" height="32"/>
-                    <segments>
-                        <segment title="Sepia"/>
-                        <segment title="Pixel"/>
-                        <segment title="Blur"/>
-                    </segments>
-                    <connections>
-                        <action selector="didSelectFilter:" destination="iN0-l3-epB" eventType="valueChanged" id="MQ7-oO-iEe"/>
-                    </connections>
-                </segmentedControl>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kp-ZH-e9m">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJp-qG-0m9">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Sepia">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didSelectSepia:" destination="iN0-l3-epB" eventType="touchUpInside" id="JC8-x4-T8S"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-eo-P5H">
+                            <rect key="frame" x="60" y="0.0" width="60" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Pixel">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didSelectPixel:" destination="iN0-l3-epB" eventType="touchUpInside" id="DLB-bB-1im"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9Z-ZC-7T0">
+                            <rect key="frame" x="120" y="0.0" width="60" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Blur">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didSelectBlur:" destination="iN0-l3-epB" eventType="touchUpInside" id="bLl-EL-ccD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddN-im-80m">
+                            <rect key="frame" x="180" y="0.0" width="60" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Comic">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didSelectComic:" destination="iN0-l3-epB" eventType="touchUpInside" id="snL-Z2-ya7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-R2-Zsy">
+                            <rect key="frame" x="240" y="0.0" width="60" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Edge work">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didSelectEdgeWork:" destination="iN0-l3-epB" eventType="touchUpInside" id="hPe-wG-y4z"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="tVc-4p-jfz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7nJ-ln-FWn"/>
-                <constraint firstItem="tVc-4p-jfz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e7D-Q7-5d4"/>
+                <constraint firstItem="7Kp-ZH-e9m" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5FD-pt-uw0"/>
+                <constraint firstItem="7Kp-ZH-e9m" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="GWv-d6-fy1"/>
+                <constraint firstAttribute="bottom" secondItem="7Kp-ZH-e9m" secondAttribute="bottom" id="O5n-aw-lbK"/>
+                <constraint firstItem="7Kp-ZH-e9m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pB9-Zu-VIg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="117" y="42"/>
+            <point key="canvasLocation" x="116.03053435114504" y="41.549295774647888"/>
         </view>
     </objects>
     <resources>

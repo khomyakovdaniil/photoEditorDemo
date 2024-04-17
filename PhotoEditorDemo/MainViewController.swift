@@ -10,7 +10,7 @@ import PencilKit
 
 class MainViewController: UIViewController {
     
-    let imagePicker = UIImagePickerController()
+    // MARK: - Properties
     
     var state: EditorState! {
         didSet {
@@ -18,7 +18,17 @@ class MainViewController: UIViewController {
         }
     }
     
+    enum EditorState: Int {
+        case crop
+        case filter
+        case draw
+        case text
+    }
+    
     let canvasView = PKCanvasView()
+    let imagePicker = UIImagePickerController()
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var baseView: UIView!
     
@@ -27,6 +37,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var statePickerSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var toolsView: UIView!
+    
+    // MARK: - Actions
     
     @IBAction func didTapAddImage(_ sender: Any) {
         addImage()
@@ -44,60 +56,33 @@ class MainViewController: UIViewController {
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         state = EditorState(rawValue: statePickerSegmentedControl.selectedSegmentIndex)
+        canvasView.backgroundColor = .clear
+        canvasView.frame = imageView.bounds
+        canvasView.drawingPolicy = .anyInput
+        canvasView.isUserInteractionEnabled = false
+        baseView.addSubview(canvasView)
     }
     
-    override func viewDidLayoutSubviews() {
-        canvasView.becomeFirstResponder()
-    }
-    
-    // MARK: - Private Functions
+    // MARK: - Private Functions (basic)
     
     private func setupToolsView() {
         switch state {
         case .crop:
             print("changed state to crop")
-            let rotateToolView = RotateToolView.instanceFromNib()
-            rotateToolView.delegate = self
-            if !toolsView.subviews.isEmpty {
-                toolsView.subviews[0].removeFromSuperview()
-            }
-            toolsView.addSubview(rotateToolView)
+            clearToolViewIfNeeded()
+            prepareCropTools()
         case .filter:
             print("changed state to filter")
-            let filterToolView = FilterToolView.instanceFromNib()
-            filterToolView.delegate = self
-            if !toolsView.subviews.isEmpty {
-                toolsView.subviews[0].removeFromSuperview()
-            }
-            toolsView.addSubview(filterToolView)
+            clearToolViewIfNeeded()
+            prepareFilterTools()
         case .draw:
             print("changed state to draw")
-            canvasView.backgroundColor = .clear
-            //            canvasView.isOpaque = false
-            canvasView.frame = imageView.bounds
-            canvasView.drawingPolicy = .anyInput
-            canvasView.delegate = self
-            baseView.addSubview(canvasView)
-            canvasView.becomeFirstResponder()
-            if let window = view.window, let toolPicker = PKToolPicker.shared(for: window) {
-                // As soon as user start integrating with the CanvasView, toolPicker will be visible
-                toolPicker.setVisible(true, forFirstResponder: canvasView)
-                toolPicker.addObserver(canvasView)
-            }
-            
+            clearToolViewIfNeeded()
+            prepareDrawTools()
         case .text:
             print("changed state to text")
-            let textToolView = TextToolView.instanceFromNib()
-            textToolView.delegate = self
-            if !toolsView.subviews.isEmpty {
-                toolsView.subviews[0].removeFromSuperview()
-            }
-            toolsView.addSubview(textToolView)
-            let textView = UITextView()
-            textView.frame = CGRect(x: 30, y: 30, width: 100, height: 100)
-            textView.backgroundColor = UIColor.red
-            textView.keyboardDismissMode = .interactive
-            baseView.addSubview(textView)
+            clearToolViewIfNeeded()
+            prepareTextTools()
         default:
             return
         }
@@ -129,18 +114,49 @@ class MainViewController: UIViewController {
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         self.present(activityViewController, animated: true, completion: nil)
     }
+    
+    private func clearToolViewIfNeeded() {
+        if !toolsView.subviews.isEmpty {
+            toolsView.subviews[0].removeFromSuperview()
+        }
+        if let window = view.window, let toolPicker = PKToolPicker.shared(for: window), toolPicker.isVisible {
+            toolPicker.setVisible(false, forFirstResponder: canvasView)
+            canvasView.resignFirstResponder()
+            canvasView.isUserInteractionEnabled = false
+        }
+    }
 }
+
+    // MARK: - Image Picker functions
 
 extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        if !baseView.subviews.isEmpty {
+            for subview in baseView.subviews {
+                if subview as? UITextView != nil {
+                    subview.removeFromSuperview()
+                }
+                if let canvas = subview as? PKCanvasView {
+                    canvas.drawing = PKDrawing()
+                }
+            }
+        }
         imageView.image = pickedImage
         
         dismiss(animated: true, completion: nil)
     }
 }
 
+    // MARK: - Crop functions
+
 extension MainViewController: RotationToolDelegate {
+    func prepareCropTools() {
+        let rotateToolView = RotateToolView.instanceFromNib()
+        rotateToolView.delegate = self
+        toolsView.addSubview(rotateToolView)
+    }
+    
     func didRotate(to degrees: Float) {
         let image = imageView.image
         let newImage = image?.rotate(radians: .pi / (180/CGFloat(degrees)))
@@ -150,7 +166,16 @@ extension MainViewController: RotationToolDelegate {
     }
 }
 
+    // MARK: - Filter functions
+
 extension MainViewController: FilterToolDelegate {
+    
+    func prepareFilterTools() {
+        let filterToolView = FilterToolView.instanceFromNib()
+        filterToolView.delegate = self
+        toolsView.addSubview(filterToolView)
+    }
+    
     func didChangeFilter(to filter: CIFilter) {
         guard let image = imageView.image else {
             return
@@ -181,7 +206,40 @@ extension MainViewController: FilterToolDelegate {
     }
 }
 
-extension MainViewController: TextToolDelegate {
+    // MARK: - Text functions
+
+extension MainViewController: TextToolDelegate, UITextViewDelegate {
+    
+    func prepareTextTools() {
+        let textToolView = TextToolView.instanceFromNib()
+        toolsView.addSubview(textToolView)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        baseView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        let tapLocation = gestureRecognizer.location(in: gestureRecognizer.view)
+        let view = gestureRecognizer.view!
+        let textToolView = toolsView.subviews.filter( {($0 as? TextToolView) != nil })[0] as! TextToolView
+        
+        let textView = UITextView(frame: CGRect(x: tapLocation.x, y: tapLocation.y, width: 200, height: 100))
+        textView.backgroundColor = UIColor.clear
+        textView.font = UIFont(name: textToolView.font, size: 25)
+        textView.textColor = textToolView.color
+        textView.text = "Tap to edit"
+        textView.isScrollEnabled = false
+        textView.delegate = self
+        let newSize = textView.sizeThatFits(CGSize(width: baseView.frame.width - tapLocation.x, height: .infinity))
+        textView.frame.size = newSize
+        
+        view.addSubview(textView)
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let newSize = textView.sizeThatFits(CGSize(width: baseView.frame.width - textView.frame.minX, height: .infinity))
+        textView.frame.size = newSize
+    }
+    
     func didApply(text: String) {
         let textColor = UIColor.white
         let textFont = UIFont(name: "Helvetica Bold", size: 120)!
@@ -209,64 +267,18 @@ extension MainViewController: TextToolDelegate {
     }
 }
 
+    // MARK: - Draw functions
+
 extension MainViewController: PKCanvasViewDelegate {
-    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-        print("drawing")
-    }
-    
-    func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
-        canvasView.resignFirstResponder()
-    }
-    
-    func canvasViewDidFinishRendering(_ canvasView: PKCanvasView) {
-        print("Completed the UI Event")
-    }
-}
-
-enum EditorState: Int {
-    case crop
-    case filter
-    case draw
-    case text
-}
-
-extension UIImage {
-    func rotate(radians: CGFloat) -> UIImage {
-        let rotatedSize = CGRect(origin: .zero, size: size)
-            .applying(CGAffineTransform(rotationAngle: CGFloat(radians)))
-            .integral.size
-        UIGraphicsBeginImageContext(rotatedSize)
-        if let context = UIGraphicsGetCurrentContext() {
-            let origin = CGPoint(x: rotatedSize.width / 2.0,
-                                 y: rotatedSize.height / 2.0)
-            context.translateBy(x: origin.x, y: origin.y)
-            context.rotate(by: radians)
-            draw(in: CGRect(x: -origin.y, y: -origin.x,
-                            width: size.width, height: size.height))
-            let rotatedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-
-            return rotatedImage ?? self
-        }
-
-        return self
-    }
-}
-
-extension UIView {
-    var asImg: UIImage? {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
+    func prepareDrawTools() {
+        canvasView.isUserInteractionEnabled = true
+        canvasView.becomeFirstResponder()
+        if let window = view.window, let toolPicker = PKToolPicker.shared(for: window) {
+            // As soon as user start integrating with the CanvasView, toolPicker will be visible
+            canvasView.resignFirstResponder()
+            toolPicker.setVisible(true, forFirstResponder: canvasView)
+            toolPicker.addObserver(canvasView)
+            canvasView.becomeFirstResponder()
         }
     }
-    
-    func snapshotImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0.0)
-        self.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let resultingImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resultingImage!
-    }
 }
-

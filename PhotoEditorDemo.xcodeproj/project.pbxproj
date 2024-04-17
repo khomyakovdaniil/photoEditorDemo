@@ -12,12 +12,14 @@
 		5F109B682BCD6B5400959613 /* FilterToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B672BCD6B5400959613 /* FilterToolView.swift */; };
 		5F109B6A2BCD6B6400959613 /* FilterToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B692BCD6B6400959613 /* FilterToolView.xib */; };
 		5F109B6C2BCD72B500959613 /* TextToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B6B2BCD72B500959613 /* TextToolView.swift */; };
-		5F109B6E2BCD72CC00959613 /* TextToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B6D2BCD72CC00959613 /* TextToolView.xib */; };
 		5F109B702BCEA05D00959613 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B6F2BCEA05D00959613 /* GoogleService-Info.plist */; };
 		5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B752BCEB12B00959613 /* StartViewController.swift */; };
 		5F109B782BCEB1D900959613 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B772BCEB1D900959613 /* LoginViewController.swift */; };
 		5F109B7A2BCEB1EA00959613 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B792BCEB1EA00959613 /* SignUpViewController.swift */; };
 		5F109B7C2BCED81F00959613 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */; };
+		5F109B7F2BCFC16B00959613 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B7E2BCFC16B00959613 /* UIImage.swift */; };
+		5F109B812BCFC18B00959613 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B802BCFC18B00959613 /* UIView.swift */; };
+		5F109B8A2BCFD32D00959613 /* TextToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B892BCFD32D00959613 /* TextToolView.xib */; };
 		5F8A081D2BCD36AA0079987A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A081C2BCD36AA0079987A /* AppDelegate.swift */; };
 		5F8A081F2BCD36AA0079987A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */; };
 		5F8A08212BCD36AA0079987A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A08202BCD36AA0079987A /* MainViewController.swift */; };
@@ -34,12 +36,14 @@
 		5F109B672BCD6B5400959613 /* FilterToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToolView.swift; sourceTree = "<group>"; };
 		5F109B692BCD6B6400959613 /* FilterToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterToolView.xib; sourceTree = "<group>"; };
 		5F109B6B2BCD72B500959613 /* TextToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToolView.swift; sourceTree = "<group>"; };
-		5F109B6D2BCD72CC00959613 /* TextToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextToolView.xib; sourceTree = "<group>"; };
 		5F109B6F2BCEA05D00959613 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F109B752BCEB12B00959613 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		5F109B772BCEB1D900959613 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5F109B792BCEB1EA00959613 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
+		5F109B7E2BCFC16B00959613 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5F109B802BCFC18B00959613 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5F109B892BCFD32D00959613 /* TextToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextToolView.xib; sourceTree = "<group>"; };
 		5F8A08192BCD36AA0079987A /* PhotoEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8A081C2BCD36AA0079987A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +93,29 @@
 				5F109B672BCD6B5400959613 /* FilterToolView.swift */,
 				5F109B692BCD6B6400959613 /* FilterToolView.xib */,
 				5F109B6B2BCD72B500959613 /* TextToolView.swift */,
-				5F109B6D2BCD72CC00959613 /* TextToolView.xib */,
+				5F109B892BCFD32D00959613 /* TextToolView.xib */,
 			);
 			path = Toolviews;
+			sourceTree = "<group>";
+		};
+		5F109B7D2BCFC15900959613 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F109B7E2BCFC16B00959613 /* UIImage.swift */,
+				5F109B802BCFC18B00959613 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5F109B822BCFC29200959613 /* AuthViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F109B752BCEB12B00959613 /* StartViewController.swift */,
+				5F109B772BCEB1D900959613 /* LoginViewController.swift */,
+				5F109B792BCEB1EA00959613 /* SignUpViewController.swift */,
+				5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */,
+			);
+			path = AuthViewControllers;
 			sourceTree = "<group>";
 		};
 		5F8A08102BCD36AA0079987A = {
@@ -115,14 +139,12 @@
 		5F8A081B2BCD36AA0079987A /* PhotoEditorDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5F109B7D2BCFC15900959613 /* Extensions */,
 				5F109B602BCD599A00959613 /* Toolviews */,
+				5F109B822BCFC29200959613 /* AuthViewControllers */,
 				5F8A081C2BCD36AA0079987A /* AppDelegate.swift */,
 				5F8A081E2BCD36AA0079987A /* SceneDelegate.swift */,
 				5F8A08202BCD36AA0079987A /* MainViewController.swift */,
-				5F109B752BCEB12B00959613 /* StartViewController.swift */,
-				5F109B772BCEB1D900959613 /* LoginViewController.swift */,
-				5F109B792BCEB1EA00959613 /* SignUpViewController.swift */,
-				5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */,
 				5F8A08222BCD36AA0079987A /* Main.storyboard */,
 				5F8A08252BCD36AC0079987A /* Assets.xcassets */,
 				5F8A08272BCD36AC0079987A /* LaunchScreen.storyboard */,
@@ -192,10 +214,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F109B8A2BCFD32D00959613 /* TextToolView.xib in Resources */,
 				5F8A08292BCD36AC0079987A /* LaunchScreen.storyboard in Resources */,
 				5F8A08262BCD36AC0079987A /* Assets.xcassets in Resources */,
 				5F109B6A2BCD6B6400959613 /* FilterToolView.xib in Resources */,
-				5F109B6E2BCD72CC00959613 /* TextToolView.xib in Resources */,
 				5F8A08242BCD36AA0079987A /* Main.storyboard in Resources */,
 				5F109B702BCEA05D00959613 /* GoogleService-Info.plist in Resources */,
 				5F109B662BCD59F600959613 /* RotateToolView.xib in Resources */,
@@ -252,8 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F109B7C2BCED81F00959613 /* RestorePasswordViewController.swift in Sources */,
+				5F109B7F2BCFC16B00959613 /* UIImage.swift in Sources */,
 				5F109B682BCD6B5400959613 /* FilterToolView.swift in Sources */,
 				5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */,
+				5F109B812BCFC18B00959613 /* UIView.swift in Sources */,
 				5F8A08212BCD36AA0079987A /* MainViewController.swift in Sources */,
 				5F8A081D2BCD36AA0079987A /* AppDelegate.swift in Sources */,
 				5F109B782BCEB1D900959613 /* LoginViewController.swift in Sources */,
