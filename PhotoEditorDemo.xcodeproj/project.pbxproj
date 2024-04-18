@@ -17,7 +17,6 @@
 		5F109B782BCEB1D900959613 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B772BCEB1D900959613 /* LoginViewController.swift */; };
 		5F109B7A2BCEB1EA00959613 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B792BCEB1EA00959613 /* SignUpViewController.swift */; };
 		5F109B7C2BCED81F00959613 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */; };
-		5F109B7F2BCFC16B00959613 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B7E2BCFC16B00959613 /* UIImage.swift */; };
 		5F109B812BCFC18B00959613 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F109B802BCFC18B00959613 /* UIView.swift */; };
 		5F109B8A2BCFD32D00959613 /* TextToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F109B892BCFD32D00959613 /* TextToolView.xib */; };
 		5F5FD63D2BD02BC700ADAFD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FD63C2BD02BC700ADAFD7 /* Constants.swift */; };
@@ -44,7 +43,6 @@
 		5F109B772BCEB1D900959613 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5F109B792BCEB1EA00959613 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5F109B7B2BCED81F00959613 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
-		5F109B7E2BCFC16B00959613 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5F109B802BCFC18B00959613 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5F109B892BCFD32D00959613 /* TextToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextToolView.xib; sourceTree = "<group>"; };
 		5F5FD63C2BD02BC700ADAFD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		5F109B7D2BCFC15900959613 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5F109B7E2BCFC16B00959613 /* UIImage.swift */,
 				5F109B802BCFC18B00959613 /* UIView.swift */,
 			);
 			path = Extensions;
@@ -320,7 +317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F109B7C2BCED81F00959613 /* RestorePasswordViewController.swift in Sources */,
-				5F109B7F2BCFC16B00959613 /* UIImage.swift in Sources */,
 				5F109B682BCD6B5400959613 /* FilterToolView.swift in Sources */,
 				5F109B762BCEB12B00959613 /* StartViewController.swift in Sources */,
 				5F109B812BCFC18B00959613 /* UIView.swift in Sources */,
