@@ -112,6 +112,12 @@ PODS:
     - AppAuth/Core (~> 1.6)
     - GTMSessionFetcher/Core (< 4.0, >= 1.5)
   - GTMSessionFetcher/Core (2.3.0)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
   - nanopb (2.30909.1):
     - nanopb/decode (= 2.30909.1)
     - nanopb/encode (= 2.30909.1)
@@ -150,6 +156,7 @@ DEPENDENCIES:
   - FirebaseAnalytics
   - FirebaseAuth
   - GoogleSignIn
+  - Localize-Swift
   - YandexMobileAds (= 7.0.0)
 
 SPEC REPOS:
@@ -170,6 +177,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - Localize-Swift
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
@@ -200,6 +208,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
   GTMAppAuth: 99fb010047ba3973b7026e45393f51f27ab965ae
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
@@ -213,6 +222,6 @@ SPEC CHECKSUMS:
   YandexMobileAds: f5467c294906de4a15e6337e6f0ae7789ecb3e41
   YandexMobileMetrica: f5368ee93f286c793d73b58da00929babfc897c1
 
-PODFILE CHECKSUM: 17c8ccf9750a79fbbac9793a494aadf3258aaa03
+PODFILE CHECKSUM: 87e1f60a351c0ca4be4878e005bb4eca5f78e5d4
 
 COCOAPODS: 1.15.2

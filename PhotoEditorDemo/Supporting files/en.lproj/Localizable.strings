@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  PhotoEditorDemo
+
+  Created by  Даниил Хомяков on 17.04.2024.
+  
+*/
+"Photo Gallery" = "Photo Gallery";
+"Camera" = "Camera";
+"Cancel" = "Cancel";
+"Error" = "Error";
+"OK" = "OK";
+"Verification link sent. Please verify your e-mail and sign in again" = "Verification link sent. Please verify your e-mail and sign in again";
+"Password Incorrect" = "Password Incorrect";
+"Please re-type password" = "Please re-type password";
+"Verification link sent. Please verify your e-mail to be able to sign in" = "Verification link sent. Please verify your e-mail to be able to sign in";
+"Password recovery email sent" = "Password recovery email sent";
+"Sign in with google" = "Sign in with google";
+"Login" = "Login";
+"Sign up" = "Sign up";
+"E-mail" = "E-mail";
+"Password" = "Password";
+"Restore password" = "Restore password";
+"Confirm password" = "Confirm password";
+"Back" = "Back";
+"None" = "None";

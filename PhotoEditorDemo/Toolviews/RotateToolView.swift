@@ -7,23 +7,34 @@
 
 import UIKit
 
+// Rotation functions performed by MainViewController, view only passes signals
 protocol RotationToolDelegate: AnyObject {
-  func didRotate(to degrees: Float)
+    func didRotate()
+    func didFlipVertical()
+    func didFlipHorizontal()
 }
 
 class RotateToolView: UIView {
     
+    // Create view from nib
     class func instanceFromNib() -> RotateToolView {
         return UINib(nibName: "RotateToolView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! RotateToolView
     }
     
+    // Should be MainViewController
     weak var delegate: RotationToolDelegate?
     
-    @IBAction func didTapLeft(_ sender: Any) {
-        delegate?.didRotate(to: -90)
+    
+    // Passing user input to delegate
+    @IBAction func didTapFlipHorizontal(_ sender: Any) {
+        delegate?.didFlipHorizontal()
     }
     
-    @IBAction func didTapRight(_ sender: Any) {
-        delegate?.didRotate(to: 90)
+    @IBAction func didTapFlipVertical(_ sender: Any) {
+        delegate?.didFlipVertical()
+    }
+    
+    @IBAction func didTapRotate(_ sender: Any) {
+        delegate?.didRotate()
     }
 }

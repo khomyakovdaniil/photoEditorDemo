@@ -6,41 +6,49 @@
 //
 
 import UIKit
+import Localize_Swift
 
+// Filter functions performed by MainViewController, view only passes signals
 protocol FilterToolDelegate: AnyObject {
-  func didChangeFilter(to filter: CIFilter)
+  func didChangeFilter(to filter: CIFilter?)
 }
 
-class FilterToolView: UIView {
+class FilterToolView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var filters = ["CISepiaTone", "CIPixellate", "CIGaussianBlur", "CIComicEffect", "CIEdgeWork"]
+    // Collection for filter
+    @IBOutlet weak var filterCollection: UICollectionView!
+    
+    // All the filters are stored in constants for easy editing
+    let filters = Constants.Tools.filters
 
+    // Create view from nib, basic collection configuration
     class func instanceFromNib() -> FilterToolView {
-        return UINib(nibName: "FilterToolView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! FilterToolView
+        let view = UINib(nibName: "FilterToolView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! FilterToolView
+        // Register standart cell for collection
+        view.filterCollection.register(UICollectionViewListCell.self, forCellWithReuseIdentifier: "DefaultCell")
+        return view
     }
     
+    // Should be MainViewController
     weak var delegate: FilterToolDelegate?
     
-    @IBAction func didSelectSepia(_ sender: Any) {
-        let filterName = filters[0]
-        delegate?.didChangeFilter(to: CIFilter(name: filterName)!)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // Number of cells according to the filters count
+        filters.count
     }
     
-    @IBAction func didSelectPixel(_ sender: Any) {
-        let filterName = filters[1]
-        delegate?.didChangeFilter(to: CIFilter(name: filterName)!)
-    }
-    @IBAction func didSelectBlur(_ sender: Any) {
-        let filterName = filters[2]
-        delegate?.didChangeFilter(to: CIFilter(name: filterName)!)
-    }
-    @IBAction func didSelectComic(_ sender: Any) {
-        let filterName = filters[3]
-        delegate?.didChangeFilter(to: CIFilter(name: filterName)!)
-    }
-    @IBAction func didSelectEdgeWork(_ sender: Any) {
-        let filterName = filters[4]
-        delegate?.didChangeFilter(to: CIFilter(name: filterName)!)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Getting basic list cell, and setting it's text property
+        let cell = filterCollection.dequeueReusableCell(withReuseIdentifier: "DefaultCell", for: indexPath) as! UICollectionViewListCell
+        var content = cell.defaultContentConfiguration()
+        // Text is just the filters name without the CI prefix
+        content.text = filters[indexPath.row].replacingOccurrences(of: "CI", with: "").localized()
+        cell.contentConfiguration = content
+        return cell
     }
     
+    // Passing the user input to delegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didChangeFilter(to: CIFilter(name: filters[indexPath.row]))
+    }
 }

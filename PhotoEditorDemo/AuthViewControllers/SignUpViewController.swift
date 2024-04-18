@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Localize_Swift
 
 class SignUpViewController: UIViewController {
     
@@ -17,36 +18,32 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordConfirm: UITextField!
     
     @IBAction func signUpAction(_ sender: Any) {
+        // The passwords should match each other, otherwise we show an error alert
         if password.text != passwordConfirm.text {
-            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: Constants.Alerts.wrongPasswordTitle, message: Constants.Alerts.wrongPasswordMessage, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: Constants.Alerts.ok, style: .cancel, handler: nil)
             
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-        }
-        else {
+        } else {
+            // If the input is correct we try to create a user with provided credentials
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ [weak self] (user, error) in
                 if error == nil {
                     guard let user = Auth.auth().currentUser else {
                         return
                     }
-                    if user.isEmailVerified {
-                        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-                        if let mainController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
-                            self?.navigationController?.setViewControllers([mainController], animated: true)
-                        }
-                    } else {
-                        user.sendEmailVerification { error in
-                            let alertController = UIAlertController(title: "Verification link sent. Please verify your e-mail to be able to sign in", message: error?.localizedDescription, preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                            
-                            alertController.addAction(defaultAction)
-                            self?.present(alertController, animated: true, completion: nil)
-                        }
+                    // If the user creation is successfull we send the verification e-mail, and show an alert telling the user to check it
+                    user.sendEmailVerification { error in
+                        let alertController = UIAlertController(title: Constants.Alerts.verificationSentOnSignUp.localized(), message: error?.localizedDescription, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: Constants.Alerts.ok.localized(), style: .cancel, handler: nil)
+                        
+                        alertController.addAction(defaultAction)
+                        self?.present(alertController, animated: true, completion: nil)
                     }
                 } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    // If user creation failed we show the error text provided by firebase
+                    let alertController = UIAlertController(title: Constants.Alerts.error.localized(), message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: Constants.Alerts.ok.localized(), style: .cancel, handler: nil)
                     
                     alertController.addAction(defaultAction)
                     self?.present(alertController, animated: true, completion: nil)

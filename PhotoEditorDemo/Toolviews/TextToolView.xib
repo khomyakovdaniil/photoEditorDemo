@@ -15,40 +15,48 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiT-HL-sAA">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nde-rS-5wu">
-                    <rect key="frame" x="228" y="0.0" width="72" height="60"/>
+                    <rect key="frame" x="230" y="0.0" width="70" height="60"/>
                 </pickerView>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-L4-MyW">
-                    <rect key="frame" x="162" y="12" width="54" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="uHf-L4-MyW" secondAttribute="height" multiplier="3:2" id="fdd-uc-9a7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
-                </textField>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minimumValue="1" maximumValue="120" id="vYM-96-wEi">
+                    <rect key="frame" x="128" y="28" width="94" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="fontSizeChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="eHw-gg-Qix"/>
+                    </connections>
+                </stepper>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d90-0T-566">
+                    <rect key="frame" x="120" y="0.0" width="110" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="uHf-L4-MyW" firstAttribute="leading" secondItem="aiT-HL-sAA" secondAttribute="trailing" constant="12" id="49c-bv-BQG"/>
-                <constraint firstAttribute="centerX" secondItem="aiT-HL-sAA" secondAttribute="trailing" id="4UW-a4-X1u"/>
                 <constraint firstItem="aiT-HL-sAA" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Ajf-8f-zCO"/>
                 <constraint firstAttribute="trailing" secondItem="nde-rS-5wu" secondAttribute="trailing" id="BIP-qo-5iG"/>
                 <constraint firstItem="aiT-HL-sAA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EDj-di-3TY"/>
+                <constraint firstItem="nde-rS-5wu" firstAttribute="leading" secondItem="vYM-96-wEi" secondAttribute="trailing" constant="8" symbolic="YES" id="FgP-G8-fCj"/>
+                <constraint firstItem="vYM-96-wEi" firstAttribute="leading" secondItem="aiT-HL-sAA" secondAttribute="trailing" constant="8" symbolic="YES" id="Gd0-tm-ML8"/>
+                <constraint firstItem="vYM-96-wEi" firstAttribute="top" secondItem="d90-0T-566" secondAttribute="bottom" id="IcD-jg-mDQ"/>
+                <constraint firstItem="vYM-96-wEi" firstAttribute="top" secondItem="d90-0T-566" secondAttribute="bottom" id="YfA-hc-mbM"/>
                 <constraint firstItem="aiT-HL-sAA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ywq-bd-K7g"/>
-                <constraint firstAttribute="bottom" secondItem="uHf-L4-MyW" secondAttribute="bottom" constant="12" id="bW5-tf-Q8T"/>
-                <constraint firstItem="nde-rS-5wu" firstAttribute="leading" secondItem="uHf-L4-MyW" secondAttribute="trailing" constant="12" id="e7A-Z2-haE"/>
-                <constraint firstItem="uHf-L4-MyW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="goj-Pk-MNC"/>
+                <constraint firstItem="nde-rS-5wu" firstAttribute="leading" secondItem="d90-0T-566" secondAttribute="trailing" id="csR-qi-v5x"/>
+                <constraint firstItem="d90-0T-566" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hNS-rh-nkP"/>
                 <constraint firstItem="nde-rS-5wu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nu3-5e-NZf"/>
+                <constraint firstItem="d90-0T-566" firstAttribute="leading" secondItem="aiT-HL-sAA" secondAttribute="trailing" id="oG5-xh-ldI"/>
                 <constraint firstAttribute="bottom" secondItem="nde-rS-5wu" secondAttribute="bottom" id="tPy-DG-10u"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="colorPicker" destination="nde-rS-5wu" id="zgP-g8-86Q"/>
                 <outlet property="fontPicker" destination="aiT-HL-sAA" id="uip-kB-xRC"/>
-                <outlet property="fontSizeField" destination="uHf-L4-MyW" id="Qi9-we-sWz"/>
+                <outlet property="fontSizeLabel" destination="d90-0T-566" id="9kt-H5-of8"/>
+                <outlet property="fontSizeStepper" destination="vYM-96-wEi" id="Q5q-tR-B7v"/>
             </connections>
             <point key="canvasLocation" x="65.648854961832058" y="41.549295774647888"/>
         </view>

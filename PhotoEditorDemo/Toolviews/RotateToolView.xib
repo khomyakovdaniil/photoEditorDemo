@@ -14,34 +14,52 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsV-uR-aTg">
-                    <rect key="frame" x="40" y="12" width="48.666666666666657" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="left"/>
-                    <connections>
-                        <action selector="didTapLeft:" destination="iN0-l3-epB" eventType="touchUpInside" id="KZZ-WY-lU8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gux-gT-Fvq">
-                    <rect key="frame" x="200.66666666666666" y="13" width="59.333333333333343" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="right"/>
-                    <connections>
-                        <action selector="didTapRight:" destination="iN0-l3-epB" eventType="touchUpInside" id="zP4-Pd-Ca3"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FmL-O6-bsh">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsV-uR-aTg">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="rotate.right" catalog="system"/>
+                            <connections>
+                                <action selector="didTapRotate:" destination="iN0-l3-epB" eventType="touchUpInside" id="88W-zI-KAD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-34-rUC">
+                            <rect key="frame" x="100" y="0.0" width="100" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="flip.horizontal" catalog="system"/>
+                            <connections>
+                                <action selector="didTapFlipHorizontal:" destination="iN0-l3-epB" eventType="touchUpInside" id="pZb-cO-6YW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gux-gT-Fvq">
+                            <rect key="frame" x="200" y="0.0" width="100" height="60"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.up.and.down.righttriangle.up.righttriangle.down" catalog="system"/>
+                            <connections>
+                                <action selector="didTapFlipVertical:" destination="iN0-l3-epB" eventType="touchUpInside" id="SRg-8G-5Ha"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gux-gT-Fvq" secondAttribute="trailing" constant="40" id="YhV-cv-cbU"/>
-                <constraint firstItem="XsV-uR-aTg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="eqo-Zj-dOT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FmL-O6-bsh" secondAttribute="trailing" id="Vte-C0-Td7"/>
+                <constraint firstItem="FmL-O6-bsh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jTi-Qa-lnr"/>
+                <constraint firstAttribute="bottom" secondItem="FmL-O6-bsh" secondAttribute="bottom" id="owF-fp-pQp"/>
+                <constraint firstItem="FmL-O6-bsh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zQj-6a-NzV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="58" y="42"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.up.and.down.righttriangle.up.righttriangle.down" catalog="system" width="128" height="124"/>
+        <image name="flip.horizontal" catalog="system" width="128" height="109"/>
+        <image name="rotate.right" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

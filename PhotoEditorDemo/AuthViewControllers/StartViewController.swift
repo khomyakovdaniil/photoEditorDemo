@@ -9,9 +9,13 @@ import UIKit
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
+import Localize_Swift
 
 class StartViewController: UIViewController {
     
+    // Login and sign up are configured in Storyboard since they are just segues to another viewControllers
+    
+    // All of this code is just copy-paste from Firebase instructions
     @IBAction func signInWithGoogle(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         let config = GIDConfiguration(clientID: clientID)
@@ -32,13 +36,15 @@ class StartViewController: UIViewController {
 
             Auth.auth().signIn(with: credential) { [weak self] result, error in
                 if error == nil{
+                    // Here the user is signed in, so we present the mainViewController
                         let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
                         if let mainController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
                             self?.navigationController?.setViewControllers([mainController], animated: true)
                         }
                 } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    // Here the user couldn't sign in so we show him the error text provided by firebase
+                    let alertController = UIAlertController(title: Constants.Alerts.error.localized(), message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: Constants.Alerts.ok.localized(), style: .cancel, handler: nil)
                     
                     alertController.addAction(defaultAction)
                     self?.present(alertController, animated: true, completion: nil)
